@@ -1,14 +1,12 @@
-package ru.netology.nmedia
+package ru.netology.nmedia.ui
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View.OnClickListener
-import android.widget.ImageButton
 import androidx.activity.viewModels
-import androidx.annotation.StringRes
-import androidx.constraintlayout.widget.ConstraintLayout
-import ru.netology.nmedia.Utils.getBeautifulCount
+import ru.netology.nmedia.viewModel.PostViewModel
+import ru.netology.nmedia.R
+import ru.netology.nmedia.utils.Utils.getBeautifulCount
 import ru.netology.nmedia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

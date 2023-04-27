@@ -1,6 +1,8 @@
-package ru.netology.nmedia
+package ru.netology.nmedia.viewModel
 
 import androidx.lifecycle.ViewModel
+import ru.netology.nmedia.PostRepository
+import ru.netology.nmedia.PostRepositoryInMemoryImpl
 
 class PostViewModel : ViewModel() {
     private val repository: PostRepository = PostRepositoryInMemoryImpl()
