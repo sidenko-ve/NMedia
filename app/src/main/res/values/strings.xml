@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">NMedia</string>
     <string name="nmedia">NMedia!</string>
+    <string name="author">Netology</string>
+    <string name="postDate">test</string>
+    <string name="post">test</string>
+    <string name="likes">10</string>
+    <string name="shares">20</string>
+    <string name="views">300</string>
 </resources>
