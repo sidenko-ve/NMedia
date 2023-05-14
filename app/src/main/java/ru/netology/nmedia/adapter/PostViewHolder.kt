@@ -18,10 +18,7 @@ class PostViewHolder(
             author.text = post.author
             date.text = post.published
             content.text = post.content
-            likeButton.setImageResource(
-                if (post.likedByMe) R.drawable.baseline_favorite_24
-                else R.drawable.baseline_favorite_border_24
-            )
+            likeButton.isChecked = post.likedByMe
             likeButton.setOnClickListener {
                 onLikeListener(post)
             }
