@@ -86,7 +86,7 @@
         android:layout_marginStart="@dimen/common_spacing"
         android:background="@android:color/transparent"
         app:layout_constraintStart_toEndOf="@id/likeText"
-        app:layout_constraintTop_toTopOf="@id/likeButton"
+        app:layout_constraintTop_toTopOf="@id/likeText"
         app:srcCompat="?attr/actionModeShareDrawable" />
 
     <ImageButton
@@ -96,24 +96,24 @@
         android:layout_marginEnd="@dimen/common_spacing"
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toStartOf="@id/viewsText"
-        app:layout_constraintTop_toTopOf="@id/likeButton"
+        app:layout_constraintTop_toTopOf="@id/likeText"
         app:srcCompat="@drawable/baseline_remove_red_eye_24" />
 
-    <ImageButton
+    <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/likeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/common_spacing"
-        android:background="@android:color/transparent"
+        android:button="@drawable/ic_like_24dp"
+        android:contentDescription="Like"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barrier2"
-        app:srcCompat="@drawable/baseline_favorite_border_24" />
+        app:layout_constraintTop_toBottomOf="@id/barrier2" />
 
     <TextView
         android:id="@+id/likeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="@dimen/common_spacing"
         android:text="@string/likes"
         android:textSize="@dimen/text_size"
         app:layout_constraintStart_toEndOf="@id/likeButton"
@@ -127,7 +127,7 @@
         android:text="@string/shares"
         android:textSize="@dimen/text_size"
         app:layout_constraintStart_toEndOf="@id/shareButton"
-        app:layout_constraintTop_toTopOf="@id/likeButton" />
+        app:layout_constraintTop_toTopOf="@id/likeText" />
 
     <TextView
         android:id="@+id/viewsText"
@@ -136,6 +136,6 @@
         android:text="@string/views"
         android:textSize="@dimen/text_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/likeButton" />
+        app:layout_constraintTop_toTopOf="@id/likeText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
