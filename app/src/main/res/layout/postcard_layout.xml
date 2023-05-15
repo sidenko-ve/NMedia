@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:padding="@dimen/common_spacing">
 
 
@@ -28,7 +28,7 @@
         android:textColor="@color/grey"
         android:textSize="@dimen/text_size"
         app:layout_constraintBottom_toTopOf="@id/date"
-        app:layout_constraintEnd_toStartOf="@id/menu"
+        app:layout_constraintEnd_toStartOf="@id/button"
         app:layout_constraintStart_toEndOf="@id/avatar"
         app:layout_constraintTop_toTopOf="@id/avatar" />
 
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/author" />
 
     <ImageView
-        android:id="@+id/menu"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="avatar,date,menu" />
+        app:constraint_referenced_ids="avatar,date,button" />
 
     <TextView
         android:id="@+id/content"

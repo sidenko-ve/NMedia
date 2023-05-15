@@ -6,10 +6,8 @@ import ru.netology.nmedia.dto.Post
 
 interface PostRepository {
     fun getAll(): LiveData<List<Post>>
-    fun save(post: Post)
     fun likeById(id: Long)
     fun shareById(id: Long)
-    fun removeById(id: Long)
 }
 
 class PostRepositoryInMemoryImpl : PostRepository {
@@ -40,20 +38,6 @@ class PostRepositoryInMemoryImpl : PostRepository {
 
     override fun getAll(): LiveData<List<Post>> = data
 
-
-    override fun save(post: Post) {
-        posts = listOf(
-            post.copy(
-                id = nextId++,
-                author = "Me",
-                likedByMe = false,
-                published = "now"
-            )
-        ) + posts
-        data.value = posts
-        return
-    }
-
     override fun likeById(id: Long) {
         posts = posts.map {
             if (it.id != id) it
@@ -71,11 +55,6 @@ class PostRepositoryInMemoryImpl : PostRepository {
         posts = posts.map {
             if (it.id != id) it else it.copy(shares = it.shares + 1)
         }
-        data.value = posts
-    }
-
-    override fun removeById(id: Long) {
-        posts = posts.filter { it.id != id }
         data.value = posts
     }
 }
