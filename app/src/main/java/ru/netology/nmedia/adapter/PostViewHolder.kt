@@ -7,12 +7,15 @@ import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.PostcardLayoutBinding
 import ru.netology.nmedia.utils.Utils
 
+//ViewHolder (иногда также называемый View Holder) - это паттерн проектирования,
+// который используется в андроид-разработке совместно с адаптерами, особенно в RecyclerView,
+// для повышения производительности при работе с элементами пользовательского интерфейса.
 class PostViewHolder(
     private val binding: PostcardLayoutBinding,
-    private val onLikeListener: OnLikeListener,
-    private val onShareListener: OnShareListener,
-    private val onRemoveListener: OnRemoveListener
+    private val listener: PostListener
+
 ) : RecyclerView.ViewHolder(binding.root) {
+
     fun bind(post: Post) {
         binding.apply {
             author.text = post.author
@@ -20,10 +23,10 @@ class PostViewHolder(
             content.text = post.content
             likeButton.isChecked = post.likedByMe
             likeButton.setOnClickListener {
-                onLikeListener(post)
+                listener.onLike(post)
             }
             shareButton.setOnClickListener {
-                onShareListener(post)
+                listener.onShare(post)
             }
             likeText.text = Utils.getBeautifulCount(post.likes)
             shareText.text = Utils.getBeautifulCount(post.shares)
@@ -31,15 +34,18 @@ class PostViewHolder(
 
             menu.setOnClickListener {
                 PopupMenu(it.context, it).apply {
-                    inflate(R.menu.post_options)
+                    inflate(R.menu.options_post)
                     setOnMenuItemClickListener { item ->
                         when (item.itemId) {
                             R.id.remove -> {
-                                onRemoveListener(post)
+                                listener.onRemove(post)
+                                true
+                            }
+                            R.id.edit -> {
+                                listener.onEdit(post)
                                 true
                             }
                             else -> false
-
                         }
                     }
                 }.show()

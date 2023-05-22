@@ -7,4 +7,5 @@
     <string name="likes">10</string>
     <string name="shares">20</string>
     <string name="views">300</string>
+    <string name="post_text">Post text</string>
 </resources>
