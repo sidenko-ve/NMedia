@@ -5,20 +5,27 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import ru.netology.nmedia.databinding.PostcardLayoutBinding
 import ru.netology.nmedia.dto.Post
-import ru.netology.nmedia.adapter.PostViewHolder
 
-typealias OnLikeListener = (post: Post) -> Unit
-typealias OnShareListener = (post: Post) -> Unit
+interface PostListener {
+    fun onLike(post: Post)
+    fun onEdit(post: Post)
+    fun onRemove(post: Post)
+    fun onShare(post: Post)
 
+}
+
+// "адаптер" (adapter) относится к компоненту, который служит для связывания данных с пользовательским интерфейсом.
 class PostsAdapter(
-    private val onLikeListener: OnLikeListener,
-    private val onShareListener: OnShareListener
+    private val listener: PostListener
 ) : ListAdapter<Post, PostViewHolder>(PostDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val binding =
             PostcardLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PostViewHolder(binding, onLikeListener, onShareListener)
+        return PostViewHolder(
+            binding,
+            listener
+        )
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
