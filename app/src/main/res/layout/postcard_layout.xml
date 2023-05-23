@@ -90,8 +90,8 @@
         android:layout_marginStart="@dimen/common_spacing"
         android:background="@android:color/transparent"
         android:checkable="true"
-        android:contentDescription="share"
-        android:text="20"
+        android:contentDescription="@string/share"
+        android:text="@string/_20"
         app:icon="@drawable/baseline_share_24"
         app:layout_constraintStart_toEndOf="@id/likeButton"
         app:layout_constraintTop_toTopOf="@id/likeButton" />
@@ -103,8 +103,8 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:checkable="true"
-        android:contentDescription="Like"
-        android:text="123"
+        android:contentDescription="@string/like"
+        android:text="@string/_123"
         app:icon="@drawable/baseline_favorite_border_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barrier2" />
