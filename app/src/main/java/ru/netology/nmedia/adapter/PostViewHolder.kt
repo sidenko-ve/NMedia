@@ -29,7 +29,7 @@ class PostViewHolder(
                 listener.onShare(post)
             }
             likeButton.text = Utils.getBeautifulCount(post.likes)
-            shareText.text = Utils.getBeautifulCount(post.shares)
+            shareButton.text = Utils.getBeautifulCount(post.shares)
             viewsText.text = Utils.getBeautifulCount(post.views)
 
             menu.setOnClickListener {
