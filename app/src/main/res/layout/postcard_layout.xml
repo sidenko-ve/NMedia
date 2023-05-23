@@ -51,8 +51,6 @@
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:clickable="true"
-        android:focusable="true"
         app:icon="@drawable/baseline_more_vert_24"
         style="@style/Widget.AppTheme.MenuButton"/>
 

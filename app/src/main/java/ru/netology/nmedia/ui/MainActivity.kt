@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import ru.netology.nmedia.R
 import ru.netology.nmedia.adapter.PostListener
 import ru.netology.nmedia.adapter.PostsAdapter
 import ru.netology.nmedia.viewModel.PostViewModel
@@ -54,14 +55,15 @@ class MainActivity : AppCompatActivity() {
                 setText(post.content)
                 binding.group.visibility = View.VISIBLE
                 binding.text.setText(post.content)
-                binding.cancel.setOnClickListener {
-                    viewModel.cancel()
-                    binding.group.visibility = View.GONE
-                    setText("")
-                    clearFocus()
-                    AndroidUtils.hideKeyboard(this)
-                }
             }
+        }
+
+        binding.cancel.setOnClickListener {
+            viewModel.cancel()
+            binding.group.visibility = View.GONE
+            binding.content.setText("")
+            binding.content.clearFocus()
+            AndroidUtils.hideKeyboard(binding.content)
         }
 
         binding.save.setOnClickListener {
