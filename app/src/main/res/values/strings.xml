@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">NMedia</string>
     <string name="nmedia">NMedia!</string>
+    <string name="author">Netology</string>
+    <string name="postDate">test</string>
+    <string name="post">test</string>
+    <string name="likes">10</string>
+    <string name="shares">20</string>
+    <string name="views">300</string>
+    <string name="post_text">Post text</string>
+    <string name="text">text</string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
+    <string name="share">share</string>
+    <string name="_20">20</string>
+    <string name="like">Like</string>
+    <string name="_123">123</string>
 </resources>
