@@ -28,7 +28,7 @@ class PostViewHolder(
             shareButton.setOnClickListener {
                 listener.onShare(post)
             }
-            likeText.text = Utils.getBeautifulCount(post.likes)
+            likeButton.text = Utils.getBeautifulCount(post.likes)
             shareText.text = Utils.getBeautifulCount(post.shares)
             viewsText.text = Utils.getBeautifulCount(post.views)
 

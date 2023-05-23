@@ -44,14 +44,17 @@
         app:layout_constraintStart_toEndOf="@id/avatar"
         app:layout_constraintTop_toBottomOf="@+id/author" />
 
-    <ImageView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_more_vert_24" />
+        android:clickable="true"
+        android:focusable="true"
+        app:icon="@drawable/baseline_more_vert_24"
+        style="@style/Widget.AppTheme.MenuButton"/>
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
@@ -79,55 +82,42 @@
         app:barrierDirection="bottom"
         app:constraint_referenced_ids="content" />
 
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/shareButton"
+        style="@style/Widget.AppTheme.ShareButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/common_spacing"
         android:background="@android:color/transparent"
-        app:layout_constraintStart_toEndOf="@id/likeText"
-        app:layout_constraintTop_toTopOf="@id/likeText"
-        app:srcCompat="?attr/actionModeShareDrawable" />
+        android:checkable="true"
+        android:contentDescription="share"
+        android:text="20"
+        app:icon="@drawable/baseline_share_24"
+        app:layout_constraintStart_toEndOf="@id/likeButton"
+        app:layout_constraintTop_toTopOf="@id/likeButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/likeButton"
+        style="@style/Widget.AppTheme.LikeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:checkable="true"
+        android:contentDescription="Like"
+        android:text="123"
+        app:icon="@drawable/baseline_favorite_border_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier2" />
 
     <ImageButton
         android:id="@+id/viewsImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/common_spacing"
+        android:paddingTop="12dp"
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toStartOf="@id/viewsText"
-        app:layout_constraintTop_toTopOf="@id/likeText"
+        app:layout_constraintTop_toTopOf="@id/likeButton"
         app:srcCompat="@drawable/baseline_remove_red_eye_24" />
-
-    <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/likeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:button="@drawable/ic_like_24dp"
-        android:contentDescription="Like"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barrier2" />
-
-    <TextView
-        android:id="@+id/likeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/common_spacing"
-        android:layout_marginTop="@dimen/common_spacing"
-        android:text="@string/likes"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintStart_toEndOf="@id/likeButton"
-        app:layout_constraintTop_toTopOf="@id/likeButton" />
-
-    <TextView
-        android:id="@+id/shareText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/common_spacing"
-        android:text="@string/shares"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintStart_toEndOf="@id/shareButton"
-        app:layout_constraintTop_toTopOf="@id/likeText" />
 
     <TextView
         android:id="@+id/viewsText"
@@ -135,7 +125,9 @@
         android:layout_height="wrap_content"
         android:text="@string/views"
         android:textSize="@dimen/text_size"
+        android:paddingTop="12dp"
+        android:paddingStart="@dimen/common_spacing"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/likeText" />
+        app:layout_constraintTop_toTopOf="@id/likeButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
